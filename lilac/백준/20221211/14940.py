@@ -45,3 +45,7 @@ for i in range(n):
 
 for i in distance:
     print(" ".join(list(map(str, i))))
+
+# 출력 방법
+# for i in graph:
+#     print(*i)

@@ -44,6 +44,8 @@ def dijkstra(start):
 
     return distance
 
+# dijkstra(start) -> dijkstra(start, end) 형태로 특정 출발점에서 특정 도착점까지 가는 거리를 반환하는 형태로 사용해도 된다.
+
 
 distance_1 = dijkstra(1)
 distance_a = dijkstra(a)

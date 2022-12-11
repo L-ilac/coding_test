@@ -9,6 +9,8 @@ limit = []
 candidate = []
 frequency = {}  # count 함수에 의한 시간초과를 막기위한 딕셔너리
 
+# from collections import Counter
+
 
 def sol1():
     for n in nums:
