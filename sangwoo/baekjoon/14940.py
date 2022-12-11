@@ -36,5 +36,3 @@ for i in range(n):
 
 for x in zido:
     print(*x)
-
-
