@@ -55,6 +55,7 @@ for y in range(n):
             cctv.append(tmp)
 
 # product 의 중요성.
+# ! *cctv 라는 건 cctv 안에 iterable이 여러개 있다는 뜻
 total_cctv_combinations = list(product(*cctv))
 
 
