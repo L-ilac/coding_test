@@ -107,6 +107,9 @@ while q:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8785cd6 (20221230 스터디 문제 추가 주석)
 =======
 >>>>>>> 8785cd6 (20221230 스터디 문제 추가 주석)
     # 거울을 어떻게 설치해도 한쪽 문에서 다른 쪽 문을 볼 수 없는 경우는 주어지지 않는다. 그렇다는건, 출발지점에서 도착지점으로의 경로는 무조건 존재한다는 것.
@@ -128,6 +131,7 @@ while q:
 
         # 큐에 있는 거울을 n번 지나친 경로는 거울을 n+1 지나친 경로만 넣을 수 있다.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     while 0 <= movePosX < N and 0 <= movePosY < N and listMap[movePosX][movePosY] != '*':
 >>>>>>> b99453e (파일 재추가)
@@ -136,6 +140,8 @@ while q:
 =======
     while 0 <= movePosX < N and 0 <= movePosY < N and listMap[movePosX][movePosY] != '*':
 >>>>>>> b99453e (파일 재추가)
+=======
+>>>>>>> 8785cd6 (20221230 스터디 문제 추가 주석)
         if listMap[movePosX][movePosY] == "!":
             if direction == 0 or direction == 2:
                 q.append(((movePosX, movePosY), mirrorCount+1, 1))
@@ -148,6 +154,7 @@ while q:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             q.clear()  # 도착지점에 도착했으므로, 나머지 경우는 더 찾아볼 필요가 없다.
             break
 
@@ -172,6 +179,14 @@ while q:
             break
 
 >>>>>>> b99453e (파일 재추가)
+=======
+            q.clear()  # 도착지점에 도착했으므로, 나머지 경우는 더 찾아볼 필요가 없다.
+            break
+
+        # 한 출발점을 기준으로 주어진 방향으로 갈 수 있을 때까지 계속 직진한다.
+        # 거울을 만나면 꺾는 방향으로의 새로운 경로를 큐에 삽입할 것이고,
+        # 거울을 만나도 설치하지 않는 경우 or 빈공간인 경우에는 방향을 유지하여 계속 직진처리하면 된다.
+>>>>>>> 8785cd6 (20221230 스터디 문제 추가 주석)
         movePosX += dx[direction]
         movePosY += dy[direction]
 
