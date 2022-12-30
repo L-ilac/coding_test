@@ -16,6 +16,7 @@ for _ in range(n):
 # 4번 cctv : 4종류 (4,0) (4,1) (4,2) (4,3) 상, 하, 좌, 우(튀어나온 부분 기준)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 5번 cctv : 1종류 (5,0)
 
 =======
@@ -25,6 +26,9 @@ for _ in range(n):
 # 5번 cctv : 1종류 (5,0)
 
 >>>>>>> 8c3377f (123)
+=======
+# 5번 cctv : 1종류
+>>>>>>> b99453e (파일 재추가)
 d = [(0, -1), (0, 1), (-1, 0), (1, 0)]  # 상하좌우
 
 move = {
@@ -68,12 +72,15 @@ for y in range(n):
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> b99453e (파일 재추가)
 =======
 
 >>>>>>> 8c3377f (123)
+=======
+>>>>>>> b99453e (파일 재추가)
 # ! product 의 중요성. -> 다른 사람의 코드 참고 안했으면 못풀었음.
 # ! product를 쓰는 이유는 한 cctv가 볼 수 있는 방향이 여러개라서, 방향별로 모든 조합을 다 구해야하기 떄문이다.
 # ! cctv 자체는 cctv의 좌표로 구분하면 되지만, 좌표는 같은데 방향이 다른 cctv들은 한 그룹에 묶어놔야했기 때문에, 한 그룹에서 하나씩 뽑아서 합치는 형식으로 구성해야한다.
@@ -115,6 +122,7 @@ def get_blind_spot(zone, n, m):  # 안전지대를 크기 구하는 함수
 min_blind_spot = sys.maxsize
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ! cctv가 하나도 없는 경우에는 그냥 사각지대 갯수를 세야되니까
 
 =======
@@ -123,6 +131,8 @@ min_blind_spot = sys.maxsize
 # ! cctv가 하나도 없는 경우에는 그냥 사각지대 갯수를 세야되니까
 
 >>>>>>> 8c3377f (123)
+=======
+>>>>>>> b99453e (파일 재추가)
 blind_spot = 0
 
 for cctv_comb in total_cctv_combinations:
@@ -131,6 +141,7 @@ for cctv_comb in total_cctv_combinations:
     blind_spot = get_blind_spot(applied_zone, n, m)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     min_blind_spot = min(min_blind_spot, blind_spot)
 
@@ -150,4 +161,9 @@ for cctv_comb in total_cctv_combinations:
 =======
 
 >>>>>>> 8c3377f (123)
+=======
+    min_blind_spot = min(min_blind_spot, blind_spot)
+    del tmp_zone
+
+>>>>>>> b99453e (파일 재추가)
 print(min_blind_spot)
