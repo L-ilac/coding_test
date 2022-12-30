@@ -63,3 +63,130 @@ def turn(x, y, dir):
             q.append([x, y, d])
 
 bfs(sx, sy, dir)
+
+
+
+
+
+# 실패 코드
+
+'''
+from collections import deque
+n=int(input())
+
+graph=[list(map(str,input())) for _ in range(n)]
+door=[]
+for i in range(n):
+    for j in range(n):
+        if graph[i][j]=="#":
+            door.append([i,j])
+check=[[False for _ in range(n)] for _ in range(n)]
+dist=[[-1 for _ in range(n)] for _ in range(n)]
+start_x=door[0][0]
+start_y=door[0][1]
+end_x=door[1][0]
+end_y=door[1][1]
+
+dx=[0,0,1,-1]
+dy=[1,-1,0,0]
+check[start_x][start_y]=True
+dist[start_x][start_y]=0
+
+
+
+def bfs(x,y):
+
+    q=deque()
+
+    for k in range(4):
+        x,y=start_x+dx[k],start_y+dy[k]
+        if 0<=x<n and 0<=y<n:
+            if graph[x][y] == ".":
+                q.append((x,y,k))
+                check[x][y]=True
+                dist[x][y]=0
+            elif graph[x][y] == "!":
+                q.append((x,y,k))
+                check[x][y]=True
+                dist[x][y]=1
+
+    while q:
+        ex,ey,previous=q.popleft()
+
+        if ex==end_x and ey==end_y:
+            break
+        
+        if graph[ex][ey]=="." or graph[ex][ey]=="#":
+            
+            if previous==0:
+                nx,ny=ex,ey+1
+        
+            elif previous==1:
+                nx,ny=ex-1,ey
+
+            elif previous==2:
+                nx,ny=ex+1,ey
+
+            elif previous==3:
+                nx,ny=ex,ey-1
+            
+            if graph[nx][ny] != "*" and check[nx][ny]==False:
+                check[nx][ny]=True
+                dist[nx][ny]=dist[ex][ey]
+                q.append((nx,ny,previous))
+        
+        elif graph[ex][ey]=="!":
+            if previous==0:
+                nx,ny=ex+1,ey
+                previous1=2
+                nx2,ny2=ex-1,ey
+                previous2=1
+                nx3,ny3=ex,ey+1
+                previous3=0
+            
+                
+        
+            elif previous==1:
+                nx,ny=ex,ey+1
+                previous1=0
+                nx2,ny2=ex,ey-1
+                previous2=3
+                nx3,ny3=ex-1,ey
+                previous3=1
+
+            elif previous==2:
+                nx,ny=ex,ey+1
+                previous1=0
+                nx2,ny2=ex,ey-1
+                previous2=3
+                nx3,ny3=ex+1,ey
+                previous3=2
+
+            elif previous==3:
+                nx,ny=ex+1,ey
+                previous1=2
+                nx2,ny2=ex-1,ey
+                previous2=1
+                nx3,ny3=ex,ey-1
+                previous3=3
+
+            if graph[nx][ny] != "*" and check[nx][ny]==False:
+                check[nx][ny]=True
+                dist[nx][ny]=dist[ex][ey]+1
+                q.append((nx,ny,previous1))
+            
+            if graph[nx2][ny2] != "*" and check[nx2][ny2]==False:
+                check[nx2][ny2]=True
+                dist[nx2][ny2]=dist[ex][ey]+1
+                q.append((nx2,ny2,previous2))
+            
+            if graph[nx3][ny3] != "*" and check[nx3][ny3]==False:
+                check[nx3][ny3]=True
+                dist[nx3][ny3]=dist[ex][ey]
+                q.append((nx3,ny3,previous3))
+               
+
+bfs(start_x,start_y)
+print(dist[end_x][end_y])
+
+'''
