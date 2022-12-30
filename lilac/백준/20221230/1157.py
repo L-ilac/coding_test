@@ -4,9 +4,13 @@
 import heapq
 from collections import defaultdict
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> b99453e (파일 재추가)
+=======
+
+>>>>>>> 8c3377f (123)
 count = defaultdict(int)
 
 arr = []
@@ -23,9 +27,13 @@ for key, value in count.items():
 most1 = heapq.heappop(arr)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> b99453e (파일 재추가)
+=======
+
+>>>>>>> 8c3377f (123)
 if arr:
     # 2번째로 가장 많이 나온 문자
     most2 = heapq.heappop(arr)
