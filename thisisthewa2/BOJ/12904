@@ -1,0 +1,15 @@
+S = list(map(str, input()))
+T = list(map(str, input()))
+#S에서 T가 아닌 T에서 S를 만들기
+
+while len(S) != len(T):
+    if T[-1] == 'A':
+        T.pop()
+    elif T[-1] == 'B':
+        T.pop()
+        T = T[::-1]
+
+if S == T:
+    print(1)
+else:
+    print(0)

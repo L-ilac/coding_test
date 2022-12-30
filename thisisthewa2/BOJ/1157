@@ -1,0 +1,11 @@
+words = input().lower()
+word_list = list(set(words)) #set으로 중복을 제거하여 탐색 횟수를 최대 26으로 줄임
+word_cnt = []#최대 개수인 문자가 두 개 이상일 경우를 고려하여 배열에 저장
+
+for i in word_list:
+  word_cnt.append(words.count(i))
+if word_cnt.count(max(word_cnt))>1:
+  print("?")#최대 개수인 문자가 두 개 이상일 경우
+else:
+  a = word_list[word_cnt.index(max(word_cnt))]
+  print(a.upper())
