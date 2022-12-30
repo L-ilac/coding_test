@@ -1,3 +1,5 @@
+# 볼 수 있는 방향이 전부 다른 cctv가 주어졌을 때, cctv에 의해서 감시되지 않는 사각지대를 구하는 문제
+# product를 적절히 사용해서 풀어야 풀 수 있었다.
 import sys
 import copy
 from itertools import product
@@ -54,8 +56,10 @@ for y in range(n):
                 tmp.append((x, y, (zone[y][x], i)))
             cctv.append(tmp)
 
-# product 의 중요성.
-# ! *cctv 라는 건 cctv 안에 iterable이 여러개 있다는 뜻
+# ! product 의 중요성. -> 다른 사람의 코드 참고 안했으면 못풀었음.
+# ! product를 쓰는 이유는 한 cctv가 볼 수 있는 방향이 여러개라서, 방향별로 모든 조합을 다 구해야하기 떄문이다.
+# ! cctv 자체는 cctv의 좌표로 구분하면 되지만, 좌표는 같은데 방향이 다른 cctv들은 한 그룹에 묶어놔야했기 때문에, 한 그룹에서 하나씩 뽑아서 합치는 형식으로 구성해야한다.
+# ! 모든 cctv를 하나의 리스트에 다 넣고 조합을 구하려하면, 동일한 cctv의 다른 방향끼리 묶일 수 있다. -> 실제로 겪었던 문제
 total_cctv_combinations = list(product(*cctv))
 
 
