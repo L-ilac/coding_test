@@ -1,15 +1,10 @@
-import heapq
+from itertools import product
 
 
-data = [7, 2, 3]
+a = [1, 2, 3]
+b = [4, 5, 6]
 
-q = []
+print(list(product(a, b)))
 
-for i in range(0, len(data)):
-    heapq.heappush(q, (i+1, data[i]))
 
-print(q)
-
-heapq.heappop(q)
-
-print(q)
+[(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)]
