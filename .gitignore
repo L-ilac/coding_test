@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 .vscode
 <<<<<<< HEAD
+<<<<<<< HEAD
 practice_note.py
 <<<<<<< HEAD
 =======
@@ -29,3 +30,7 @@ practice_note.py
 .vscode
 .practice_note.py
 >>>>>>> d82a681 (수정)
+=======
+practice_note.py
+README.md
+>>>>>>> 92bf806 (gitignore 수정)
