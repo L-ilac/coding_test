@@ -1,8 +1,13 @@
 .DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vscode
 practice_note.py
 =======
 .vscide
 .practice_note.py
 >>>>>>> b99453e (파일 재추가)
+=======
+.vscode
+.practice_note.py
+>>>>>>> d82a681 (수정)
