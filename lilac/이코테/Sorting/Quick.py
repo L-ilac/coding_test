@@ -1,32 +1,34 @@
 # 코드의 일관성을 위해 리스트의 index - 1 과정은 무시한다.
 # Naivest Version
-def Quick_sort(array, start, end): 
-	if len(array) == 1:
-		return
+def Quick_sort(array, start, end):
+    if len(array) == 1:
+        return
 
-	if start >= end:
-		return
-	
-	pivot = array[start]
-	left = start + 1
-	right = end
+    if start >= end:
+        return
 
-	while True:
-		while array[left] < pivot and left <= end:
-			left += 1
-		while array[right] > pivot and right > start:
-			right -= 1
+    pivot = array[start]
+    left = start + 1
+    right = end
 
-		if left > right :
-			break
+    while True:
+        while array[left] < pivot and left <= end:
+            left += 1
+        while array[right] > pivot and right > start:
+            right -= 1
 
-		array[left],array[right] = array[right], array[left]
+        if left > right:
+            break
 
-	array[start], array[right] = array[right], array[start]
+        array[left], array[right] = array[right], array[left]
 
-	# right가 피벗의 최종 위치이므로 피벗 기준으로 앞뒤로 나눈다.
-	Quick_sort(array,start,right-1)  # start와 right -1 이 값이 같으면 피벗 좌측 array의 요소가 1개, right-1이 더 작으면 빈 배열
-	Quick_sort(array,right+1,end) # right+1와 end 이 값이 같으면 피벗 우측 array의 요소가 1개, end이 더 작으면 빈 배열 
+    array[start], array[right] = array[right], array[start]
+
+    # right가 피벗의 최종 위치이므로 피벗 기준으로 앞뒤로 나눈다.
+    # start와 right -1 이 값이 같으면 피벗 좌측 array의 요소가 1개, right-1이 더 작으면 빈 배열
+    Quick_sort(array, start, right-1)
+    # right+1와 end 이 값이 같으면 피벗 우측 array의 요소가 1개, end이 더 작으면 빈 배열
+    Quick_sort(array, right+1, end)
 
 
 # 대충 짜면 이런데, 여기서 뭘 더 추가해야할까?
