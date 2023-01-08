@@ -8,7 +8,7 @@ graph=[[" " for _ in range(k)] for _ in range(n)]
 # 최소단위인 3이 되면 그리고, 이외에는 재귀 실행
 def draw(n,x,y):
     if n==3:
-      # 삼각형의 꼭짓점이 그림 그리는 시작하는 시작점
+      # 삼각형의 꼭짓점이 그림 그리는 시작점
         graph[x][y]="*"
         graph[x+1][y-1]="*"
         graph[x+1][y+1]="*"
