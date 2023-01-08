@@ -1,0 +1,37 @@
+from collections import deque
+r,c,n = map(int,input().split())
+data = [list(input()) for _ in range(r)]
+dx = [1,0,-1,0]
+dy = [0,1,0,-1]
+q = deque()
+
+def bfs(q,data):
+    while q:
+        x,y = q.popleft()
+        data[x][y] = '.'
+        for i in range(4):
+            nx,ny = x+dx[i],y+dy[i]
+            if 0<=nx<r and 0<=ny<c and data[nx][ny]=='O':
+                data[nx][ny] = '.'
+
+def bomb(time):
+    global data, q
+    if time == 1:
+        for i in range(r):
+            for j in range(c):
+                if data[i][j] == 'O':
+                    q.append((i,j)) #폭탄 위치 저장
+    elif time % 2 == 1: #3초가 지났다면
+        bfs(q,data) #폭탄을 폭발 시킨다
+        for x in range(r):
+            for y in range(c):
+                if data[x][y] == 'O':
+                    q.append((x,y))
+    else:#폭탄 설치
+        data = [['O']*c for _ in range(r)]
+
+for i in range(1,n+1):
+    bomb(i)
+
+for row in data:
+    print(''.join(row))
