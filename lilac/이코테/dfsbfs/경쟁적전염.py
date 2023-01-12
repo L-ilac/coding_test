@@ -35,12 +35,15 @@ while t < target_t:
 
     t += 1
 
+    # ! 바이러스들이 퍼지는 순서를 섞이게 하지 않기 위함
+    # ! 1초에 퍼지는 바이러스 1 > 1초에 퍼지는 바이러스 2 > 2초에 퍼지는 바이러스 1
+    # ! 시간이 가장 높은 우선순위를 가지고, 시간이 같다면 그 다음이 바이러스 값이 낮은 순서대로임.
     virus = tmp
 
 print(board[target_x-1][target_y-1])
 
 
-# ! bfs
+# ! bfs인데 사실 위의 풀이와 별반 다를바 없음. heapq 대신 deque쓴거 밖에 차이가 없음
 
 # import heapq
 n, k = map(int, input().split())

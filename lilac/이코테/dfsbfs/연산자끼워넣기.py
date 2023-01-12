@@ -12,12 +12,13 @@ for i in range(4):
     for _ in range(operator[i]):
         new_operator.append(i)
 
-# ! 중복 제거해줄 것
+# ! 중복 제거해줄 것 (순열에 의해 결과는 같은 연산자를 다른 요소로 인식하기 때문)
 operator_perms = list(set(permutations(new_operator, len(new_operator))))
 
 
 max_val = -sys.maxsize
 min_val = sys.maxsize
+
 
 for perms in operator_perms:
     result = numbers[0]
@@ -36,3 +37,6 @@ for perms in operator_perms:
 
 print(max_val)
 print(min_val)
+
+
+# ! dfs 로도 풀수가 있다.

@@ -65,5 +65,3 @@ else:
     result.sort()
     for i in result:
         print(i)
-
-# ! dfs + 백트래킹?

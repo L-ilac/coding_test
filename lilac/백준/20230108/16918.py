@@ -2,6 +2,7 @@
 
 import copy
 
+
 # ! 규칙성을 찾아내서 반복되는 결과만 찾아서 반환할 경우
 r, c, n = map(int, input().split())
 
