@@ -44,6 +44,7 @@ def bfs():
 def melt():
     n, m = len(cheese), len(cheese[0])
     d = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
     # 내부 구멍은 외부 격자와 이어지지 않음 -> 내부 구멍을 찾아야함
     visited = [[False]*m for _ in range(n)]
     holes = []
@@ -69,6 +70,8 @@ def melt():
 
                 holes.append(hole)
 
+    # ! 구한 모든 구멍들 중, 치즈의 내부 구멍을 이루고 있는 좌표중에는 x좌표가 0이거나 y좌표가 0인 경우가 존재하지 않음.
+    # ! 이를 이용하여 내부구멍을 찾는다.
     for hole in holes[:]:
         if all(1 <= x <= n-2 and 1 <= y <= m-2 for x, y in hole):
             continue

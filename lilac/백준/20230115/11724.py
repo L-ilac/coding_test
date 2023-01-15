@@ -16,6 +16,8 @@ for _ in range(m):
 
 cnt = 0
 
+
+# ! bfs/dfs 를 이용하여 주어진 그래프가 몇개의 서브그래프로 이루어져있는지 세주면 됌.
 for i in range(1, n+1):
     if not visited[i]:
         q = deque()

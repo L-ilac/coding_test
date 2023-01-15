@@ -51,7 +51,8 @@ while True:
     if remain == 0:
         print(time)
         break
-    #
+
+    # ! 이전 phase에 익지 않았던 토마토의 갯수를 세어놓고, 다음 phase에 남은 토마토의 갯수와 동일한지 체크한다.
     past = remain
     ripe = bfs(ripe)
     print(ripe)
