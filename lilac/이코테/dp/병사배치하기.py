@@ -1,3 +1,5 @@
+
+# ! LIS 문제
 n = int(input())
 
 soldiers = list(map(int, input().split()))

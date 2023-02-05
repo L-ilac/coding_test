@@ -19,7 +19,9 @@ bags.sort()
 
 result = 0
 tmp = []
+
 # ! 가방 무게를 기준으로, 가방무게 이하의 모든 보석들중에 가장 비싼거를 골라서 넣는다.
+
 for b in bags:
     while jewels:
         # * 보석의 무게가 가방의 무게보다 작을 경우 후보군에 들어갈 수 있음.
@@ -34,6 +36,5 @@ for b in bags:
     # * 넣을 수 있는 보석이 없을 수도 있음.
     if tmp:
         result -= heapq.heappop(tmp)[0]
-
 
 print(result)
