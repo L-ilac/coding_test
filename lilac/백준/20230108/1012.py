@@ -6,6 +6,7 @@ from collections import deque
 import sys
 sys.setrecursionlimit(10000)  # ? dfs로 푸는 경우에 필요한 재귀함수 깊이 설정(최대 깊이 50 * 50)
 
+
 # 총 테스트 케이스 갯수
 t = int(input())
 test = []
