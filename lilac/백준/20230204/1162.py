@@ -47,11 +47,3 @@ while q:
 # print(distance)
 #! 포장해하는 도로 수 k가 전체 도로 m보다 클수도 있다. 그래서 문제에서 k개 이하라고 한것.
 print(min([distance[i][n] for i in range(0, k+1)]))
-
-
-# 0 1 0
-# 0 2 1
-# 0 3 1
-# 1 3 0
-# 10 2 0
-# 10 4 1

@@ -2,7 +2,6 @@ n, k = map(int, input().split())
 
 # ! dp[i][j] -> 숫자 i개를 더해서 j를 만드는 가짓수
 
-
 dp = [[0]*(n+1) for _ in range(k+1)]
 
 # 숫자 1개를 더해서 j를 만드는 가짓수
@@ -22,7 +21,5 @@ for i in range(2, k+1):
 
         dp[i][j] %= 1000000000
 
+print(dp)
 print(dp[k][n])
-
-
-#
