@@ -114,6 +114,7 @@ while edges:
         cnt += 1
         total += cost
 
+    # ! 선택된 bridge가 섬개수-1 개라면, 모든 섬은 연결된다.
     if cnt == island_num-2:
         break
 
