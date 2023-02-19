@@ -105,20 +105,25 @@ parent = [i for i in range(island_num-1)]
 total = 0
 
 
+cnt = 0
 while edges:
     cost, a, b = heapq.heappop(edges)
 
     if find_parent(parent, a) != find_parent(parent, b):
         union_parent(parent, a, b)
+        cnt += 1
         total += cost
 
+    if cnt == island_num-2:
+        break
+
 # ! 한번 더 find_parent를 돌려줘야함
-for i in range(island_num-1):
-    find_parent(parent, i)
+# for i in range(island_num-1):
+#     find_parent(parent, i)
 
 # print(parent)
 
-if len(set(parent)) == 1:
+if cnt == island_num-2:
     print(total)
 else:
     print(-1)
