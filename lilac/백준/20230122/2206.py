@@ -43,9 +43,9 @@ def bfs():
                     if wallbreak == 0:
                         visited[1][newx][newy] = step+1
                         q.append((newx, newy, step+1, 1))
-                    # 이미 벽을 한번 뚫고 와서 갈 수 없음
-                    else:
-                        pass
+                    # # 이미 벽을 한번 뚫고 와서 갈 수 없음
+                    # else:
+                    #     pass
 
     return max(visited[0][-1][-1], visited[1][-1][-1])
 

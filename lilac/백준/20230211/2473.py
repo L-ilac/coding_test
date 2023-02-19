@@ -1,9 +1,37 @@
 import sys
-from bisect import bisect_left
 n = int(input())
-solutions = list(map(int, input().split()))
-
+solutions = list(map(int, sys.stdin.readline().rstrip().split()))
 solutions.sort()
 
-# ! 서로 다른 세 개의 용액을 더해서 0에 가장 가까운 용액 만들기
-# ! 세 용액
+answer_idx = [0, 0, 0]
+
+min_sum = sys.maxsize
+
+for i in range(0, n-2):
+    fix = i
+    left = i+1
+    right = n-1
+
+    while left < right:
+        tmp_sum = solutions[fix] + solutions[left] + solutions[right]
+
+        if abs(tmp_sum) < abs(min_sum):
+            min_sum = tmp_sum
+            answer_idx = [fix, left, right]
+
+        if tmp_sum == 0:
+            break
+
+        elif tmp_sum > 0:
+            right -= 1
+
+        else:
+            left += 1
+
+    if min_sum == 0:
+        break
+
+answer = [solutions[answer_idx[0]],
+          solutions[answer_idx[1]], solutions[answer_idx[2]]]
+
+print(*answer)
