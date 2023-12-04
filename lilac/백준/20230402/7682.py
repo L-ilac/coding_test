@@ -2,6 +2,7 @@ import sys
 
 
 def who_wins(tmp):
+    # . 이 승자가 될 수도 있음 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ ㅅㅂ
 
     winner = set()
 
@@ -41,4 +42,25 @@ while True:
 
     winner = who_wins(tmp)
 
-    print(winner)
+    # ! 둘다 승리조건을 만족했을 경우 -> 한명이 완성하면 게임이 끝나기때문에 발생할수 없음
+    if len(winner) == 2:
+        print("invalid")
+    # ! 한명만 승리조건을 만족했을 경우
+    elif len(winner) == 1:
+        # * 후공이 승리한 경우
+        if winner.pop() == "O":
+            if o_cnt == x_cnt:
+                print("valid")
+            else:
+                print("invalid")
+        # * 선공이 승리한 경우 (숫자가 같으면서 이길 수 없음)
+        else:
+            if o_cnt == x_cnt:
+                print("invalid")
+            else:
+                print("valid")
+    else:
+        if x_cnt + o_cnt == 9:
+            print("valid")
+        else:
+            print("invalid")

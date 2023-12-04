@@ -9,6 +9,7 @@ result = 0
 # ! 한 빌딩을 기준으로 양쪽 방향으로 탐색한다.
 for i in range(n):
     can_see = 0
+
     tmp_height = buildings[i]
     delta_right = -sys.maxsize
     delta_left = sys.maxsize
@@ -23,7 +24,6 @@ for i in range(n):
 
     for j in range(i+1, n):
         right = buildings[j]
-
         tmp_delta = (right - tmp_height) / (j-i)
 
         if tmp_delta > delta_right:

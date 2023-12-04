@@ -6,7 +6,6 @@ s = input()
 t = input()
 
 while len(s) != len(t):
-
     if t[-1] == "A":
         t = t[:-1]
     else:

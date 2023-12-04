@@ -1,5 +1,3 @@
-import copy
-
 board_size = int(input())
 
 board = []
